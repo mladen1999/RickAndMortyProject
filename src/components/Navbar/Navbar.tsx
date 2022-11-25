@@ -3,7 +3,7 @@ import Logo from "../../assets/Logo";
 const Navbar = () => {
   return (
     <div>
-      <div className="mt-2 ml-2 grid grid-rows-1 grid-flow-col gap-4 ">
+      <div className="mt-2 ml-2 grid grid-cols-4 gap-4   ">
         <Logo />
         <input
           type="text"
