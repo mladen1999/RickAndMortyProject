@@ -3,7 +3,7 @@ import { useCharacters } from "./useCharacters";
 
 const Characters = () => {
   const result = useCharacters();
-  console.log(result);
+  console.log("Characters.tsx " + result);
   return (
     <div>
       <div className="flex">
@@ -18,8 +18,7 @@ const Characters = () => {
 
         <div className="flex items-center mr-4">
           <input
-            checked
-            id="inline-checked-radio"
+            id="inline-checked-radio-any"
             type="radio"
             value=""
             name="inline-radio-group"
@@ -34,8 +33,7 @@ const Characters = () => {
         </div>
         <div className="flex items-center mr-4">
           <input
-            checked
-            id="inline-checked-radio"
+            id="inline-checked-radio-live"
             type="radio"
             value=""
             name="inline-radio-group"
@@ -50,8 +48,7 @@ const Characters = () => {
         </div>
         <div className="flex items-center mr-4">
           <input
-            checked
-            id="inline-checked-radio"
+            id="inline-checked-radio-dead"
             type="radio"
             value=""
             name="inline-radio-group"
@@ -66,8 +63,7 @@ const Characters = () => {
         </div>
         <div className="flex items-center mr-4">
           <input
-            checked
-            id="inline-checked-radio"
+            id="inline-checked-radio-unknown"
             type="radio"
             value=""
             name="inline-radio-group"
@@ -82,7 +78,7 @@ const Characters = () => {
         </div>
       </div>
       <div className="grid grid-cols-4 gap-4">
-        {result?.map((item) => result && <Card key={item.name} {...item} />)}
+        {result?.map((item) => result && <Card key={item.image} {...item} />)}
         <p></p>
       </div>
     </div>

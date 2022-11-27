@@ -1,12 +1,15 @@
 import "./App.css";
 import Characters from "./components/Characters/Characters";
+import { SearchContextProvider } from "./components/context/SearchContext";
 import Navbar from "./components/Navbar/Navbar";
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <Characters />
+      <SearchContextProvider>
+        <Navbar />
+        <Characters />
+      </SearchContextProvider>
     </div>
   );
 }
