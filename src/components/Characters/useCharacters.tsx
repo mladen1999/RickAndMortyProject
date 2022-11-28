@@ -7,17 +7,20 @@ type resultProps = {
 };
 export const useCharacters = () => {
   const [result, setResult] = useState<resultProps[]>([]);
-  const { data } = useContext(SearchContext);
+  const { data: search, status } = useContext(SearchContext);
+
   useEffect(() => {
     const api = async () => {
-      const data1 = await fetch(
-        `https://rickandmortyapi.com/api/character/?name=${data}&status=alive`
+      const result = await fetch(
+        `https://rickandmortyapi.com/api/character/?name=${
+          search ? search : ""
+        }&status=${status ? status : ""}`
       );
-      const jsonData = await data1.json();
+      const jsonData = await result.json();
       setResult(jsonData.results);
     };
 
     api();
-  }, [data]);
+  }, [search, status]);
   return result;
 };
