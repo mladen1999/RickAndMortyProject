@@ -6,17 +6,17 @@ import React, {
 } from "react";
 
 type AuthSearch = {
-  data: ``;
-  setData: () => {};
-  status: string;
-  setStatus: () => null;
+  character: ``;
+  setCharacter: () => {};
+  characterStatus: string;
+  setCharacterStatus: () => null;
 };
 
 type SearchContextType = {
-  data: AuthSearch | null;
-  setData: React.Dispatch<React.SetStateAction<AuthSearch | null>>;
-  status: any;
-  setStatus: Dispatch<SetStateAction<string>>;
+  character: AuthSearch | null;
+  setCharacter: React.Dispatch<React.SetStateAction<AuthSearch | null>>;
+  characterStatus: any;
+  setCharacterStatus: Dispatch<SetStateAction<string>>;
 };
 
 type SearchContextProviderProps = {
@@ -29,10 +29,12 @@ export const SearchContext = createContext({} as SearchContextType);
 export const SearchContextProvider = ({
   children,
 }: SearchContextProviderProps) => {
-  const [data, setData] = useState<AuthSearch | null>(null);
-  const [status, setStatus] = useState("");
+  const [character, setCharacter] = useState<AuthSearch | null>(null);
+  const [characterStatus, setCharacterStatus] = useState("");
   return (
-    <SearchContext.Provider value={{ data, setData, status, setStatus }}>
+    <SearchContext.Provider
+      value={{ character, setCharacter, characterStatus, setCharacterStatus }}
+    >
       {children}
     </SearchContext.Provider>
   );

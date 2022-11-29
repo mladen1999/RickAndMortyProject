@@ -1,26 +1,27 @@
 import { useState, useEffect } from "react";
 import { SearchContext } from "../context/SearchContext";
 import { useContext } from "react";
+import useInfinite from "./useInfinite";
 type resultProps = {
   name: string;
   image: string;
 };
 export const useCharacters = () => {
   const [result, setResult] = useState<resultProps[]>([]);
-  const { data: search, status } = useContext(SearchContext);
-
+  const { character, characterStatus } = useContext(SearchContext);
+  const resu = useInfinite();
   useEffect(() => {
     const api = async () => {
       const result = await fetch(
         `https://rickandmortyapi.com/api/character/?name=${
-          search ? search : ""
-        }&status=${status ? status : ""}`
+          character ? character : ""
+        }&status=${characterStatus ? characterStatus : ""}`
       );
       const jsonData = await result.json();
       setResult(jsonData.results);
     };
 
     api();
-  }, [search, status]);
+  }, [character, characterStatus, resu]);
   return result;
 };

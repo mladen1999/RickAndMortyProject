@@ -3,10 +3,11 @@ import { useContext } from "react";
 import { SearchContext } from "../context/SearchContext";
 export const Status = () => {
   const [selectedStatus, setSelectedStatus] = useState<String>();
-  const { data, setData, status, setStatus } = useContext(SearchContext);
+  const { character, setCharacter, characterStatus, setCharacterStatus } =
+    useContext(SearchContext);
   // This function will be triggered when a radio button is selected
   const radioHandler = (e: string | any) => {
-    setStatus(e.target.value);
+    setCharacterStatus(e.target.value);
   };
   return (
     <div>

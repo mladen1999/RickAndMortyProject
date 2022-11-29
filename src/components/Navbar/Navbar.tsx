@@ -2,11 +2,11 @@ import Logo from "../../assets/Logo";
 import { useContext } from "react";
 import { SearchContext } from "../context/SearchContext";
 const Navbar = () => {
-  const { data, setData } = useContext(SearchContext);
+  const { setCharacter } = useContext(SearchContext);
 
   const onChangeHandler = (e: string | any) => {
     const timer = setTimeout(() => {
-      setData(e.target.value);
+      setCharacter(e.target.value);
     }, 1000);
   };
   return (
