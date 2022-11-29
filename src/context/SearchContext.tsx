@@ -5,6 +5,7 @@ import React, {
   Dispatch,
 } from "react";
 
+// Type
 type AuthSearch = {
   character: ``;
   setCharacter: () => {};
@@ -12,6 +13,7 @@ type AuthSearch = {
   setCharacterStatus: () => null;
 };
 
+// Type
 type SearchContextType = {
   character: AuthSearch | null;
   setCharacter: React.Dispatch<React.SetStateAction<AuthSearch | null>>;
@@ -19,6 +21,7 @@ type SearchContextType = {
   setCharacterStatus: Dispatch<SetStateAction<string>>;
 };
 
+// Type
 type SearchContextProviderProps = {
   children: React.ReactNode;
 };

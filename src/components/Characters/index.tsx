@@ -1,12 +1,14 @@
-import Card from "../Card/Card";
+import Card from "../Card";
 
-import UseInfinite from "./useInfinite";
+// Hook
+import useCharacter from "./useCharacters";
 
 const Characters = () => {
-  const data = UseInfinite();
+  const data = useCharacter();
+
   return (
-    <div className="w-[100%] flex justify-center">
-      <div className="flex flex-wrap w-[80%] justify-center items-center">
+    <div className="flex w-[100%] justify-center">
+      <div className="flex w-[80%] flex-wrap items-center justify-center text-center">
         {data?.pages?.map((page) =>
           page?.results?.map((item: any) => (
             <div className="result" key={item.id}>

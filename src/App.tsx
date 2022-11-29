@@ -1,9 +1,12 @@
-import "./App.css";
-import Characters from "./components/Characters/Characters";
-import { SearchContextProvider } from "./components/context/SearchContext";
-import Navbar from "./components/Navbar/Navbar";
 import { QueryClientProvider, QueryClient } from "react-query";
-import { Status } from "./components/Status/Status";
+
+// Components
+import Characters from "./components/Characters";
+import Navbar from "./components/Navbar";
+import { Status } from "./components/Status";
+
+// Context
+import { SearchContextProvider } from "./context/SearchContext";
 
 const queryClient = new QueryClient();
 

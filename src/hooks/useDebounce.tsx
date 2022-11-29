@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function useDebounce() {
   const [newTimeout, setNewTimeout] = useState<NodeJS.Timeout>();
