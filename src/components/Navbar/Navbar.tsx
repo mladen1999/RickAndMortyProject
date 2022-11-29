@@ -1,12 +1,14 @@
 import Logo from "../../assets/Logo";
 import { useContext } from "react";
 import { SearchContext } from "../context/SearchContext";
+import useDebounce from "../Hooks/useDebounce";
 const Navbar = () => {
   const { setCharacter } = useContext(SearchContext);
+  const debounce = useDebounce();
 
   const onChangeHandler = (e: string | any) => {
     const timer = setTimeout(() => {
-      setCharacter(e.target.value);
+      debounce(() => setCharacter(e.target.value), 500);
     }, 1000);
   };
   return (

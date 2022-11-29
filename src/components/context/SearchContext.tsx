@@ -23,7 +23,6 @@ type SearchContextProviderProps = {
   children: React.ReactNode;
 };
 
-// export const UserContext = createContext<UserContextType | null>(null)
 export const SearchContext = createContext({} as SearchContextType);
 
 export const SearchContextProvider = ({

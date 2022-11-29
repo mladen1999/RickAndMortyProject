@@ -1,12 +1,9 @@
 import { useInfiniteQuery } from "react-query";
-import { Status } from "../Status/Status";
-import { useCharacters } from "./useCharacters";
 import { useEffect } from "react";
 import { SearchContext } from "../context/SearchContext";
 import { useContext } from "react";
 const UseInfinite = () => {
   const { character, characterStatus } = useContext(SearchContext);
-
   const fetchRepositories = async (page: number) => {
     const response = await fetch(
       `https://rickandmortyapi.com/api/character/?name=${
