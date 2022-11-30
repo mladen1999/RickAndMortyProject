@@ -8,7 +8,7 @@ const useCharacter = () => {
   const { fetchRepositories, character, characterStatus } =
     useFetchCharacters();
 
-  const { data, hasNextPage, fetchNextPage } = useInfiniteQuery(
+  const { data, hasNextPage, fetchNextPage, isLoading } = useInfiniteQuery(
     ["characters", character, characterStatus],
 
     ({ pageParam = 1 }) => fetchRepositories(pageParam),
@@ -36,7 +36,8 @@ const useCharacter = () => {
       document.removeEventListener("scroll", handleScroll);
     };
   }, [fetchNextPage, hasNextPage, character, data, characterStatus]);
-  return data;
+
+  return { data, isLoading };
 };
 
 export default useCharacter;

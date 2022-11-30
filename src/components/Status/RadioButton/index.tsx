@@ -11,7 +11,7 @@ function RadioButton({ label, value }: IStatus) {
   // Todo: move to custom hook ===> DONE ***
   const radioHandler = useRadioButton();
   return (
-    <div className="mx-[7px] flex items-center">
+    <div className="mx-[7px] flex  ">
       <input
         onChange={radioHandler}
         id="inline-checked-radio-any"

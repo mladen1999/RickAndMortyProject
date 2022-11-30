@@ -1,9 +1,9 @@
 const Card = ({ name, image }: any) => {
   return (
-    <div className="m-[40px] h-[300px] w-[300px] cursor-pointer">
+    <div className=" my-9 sm:m-[20px] sm:my-12 sm:h-[300px] sm:w-[300px]">
       <img src={image} alt="" />
-      <div className="">
-        <h1 className="text-[black] ">{name}</h1>
+      <div className=" h-[70px] bg-white">
+        <h1 className="pt-4 font-bold text-[black]">{name}</h1>
       </div>
     </div>
   );

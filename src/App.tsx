@@ -12,7 +12,7 @@ const queryClient = new QueryClient();
 
 function App() {
   return (
-    <div className="App">
+    <div className="App ">
       <QueryClientProvider client={queryClient}>
         <SearchContextProvider>
           <Navbar />
