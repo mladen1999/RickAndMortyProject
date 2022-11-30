@@ -1,9 +1,11 @@
 const Card = ({ name, image }: any) => {
   return (
-    <div className=" my-9 sm:m-[20px] sm:my-12 sm:h-[300px] sm:w-[300px]">
-      <img src={image} alt="" />
-      <div className=" h-[70px] bg-white">
-        <h1 className="pt-4 font-bold text-[black]">{name}</h1>
+    <div className="m-5  min-h-[270px] w-[200px] md:min-h-[300px] md:w-[300px]">
+      <img src={image} alt={image} />
+      <div className=" flex justify-center bg-white">
+        <h2 className="ml-4 py-3 pt-4 text-left font-bold text-[black]">
+          {name}
+        </h2>
       </div>
     </div>
   );
